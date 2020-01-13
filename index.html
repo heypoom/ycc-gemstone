@@ -56,14 +56,34 @@
 </head>
 <body>
   <div class="container">
-    <div class="point-display">100 แต้ม</div>
+		<div class="point-display"><span class="point">100</span> แต้ม</div>
 
-    <input type="text" class="point-input">
+    <input type="text" value="10" class="point-input">
 
     <div class="btn-container">
       <div class="btn-action btn-add-point">+</div>
       <div class="btn-action btn-remove-point">-</div>
     </div>
   </div>
+
+	<script>
+    const pointEl = document.querySelector('.point')
+
+    const addBtn = document.querySelector('.btn-add-point')
+    const removeBtn = document.querySelector('.btn-remove-point')
+    const pointInput = document.querySelector('.point-input')
+
+		addBtn.addEventListener('click', function () {
+			point = Number(pointInput.value) || 10
+
+			pointEl.textContent = Number(pointEl.textContent) + point
+		})
+
+		removeBtn.addEventListener('click', function () {
+			point = Number(pointInput.value) || 10
+
+			pointEl.textContent = Number(pointEl.textContent) - point
+		})
+  </script>
 </body>
 </html>
